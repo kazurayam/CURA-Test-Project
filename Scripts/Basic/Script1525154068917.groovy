@@ -39,6 +39,8 @@ WebUI.click(findTestObject('Page_CURA Healthcare Service/input_hospital_readmiss
 
 WebUI.click(findTestObject('Page_CURA Healthcare Service/input_programs'))
 
+WebUI.setText(findTestObject('Page_CURA Healthcare Service/input_visit_date'), '30/05/2018')
+
 WebUI.setText(findTestObject('Page_CURA Healthcare Service/textarea_comment'), 'This is a comment')
 
 WebUI.click(findTestObject('Page_CURA Healthcare Service/button_Book Appointment'))

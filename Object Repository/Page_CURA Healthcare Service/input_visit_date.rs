@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>input_username</name>
+   <name>input_visit_date</name>
    <tag></tag>
-   <elementGuidId>9ed505b7-f801-429c-97b2-9e54956e3c20</elementGuidId>
+   <elementGuidId>c1ac58d3-955a-4c62-849a-8bd7c1371e97</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//input[@id = 'txt-username' and @name = 'username' and @type = 'text']</value>
+         <value>//input[@id = 'txt_visit_date' and @name = 'visit_date' and @placeholder = 'Username' and @type = 'text']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -31,21 +31,14 @@
       <matchCondition>equals</matchCondition>
       <name>id</name>
       <type>Main</type>
-      <value>txt-username</value>
+      <value>txt_visit_date</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>name</name>
       <type>Main</type>
-      <value>username</value>
-   </webElementProperties>
-   <webElementProperties>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>placeholder</name>
-      <type>Main</type>
-      <value>Username</value>
+      <value>visit_date</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
