@@ -24,38 +24,38 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('http://demoaut.katalon.com/')
 
-WebUI.click(findTestObject('Page_CURA Healthcare Service/a_Make Appointment'))
+WebUI.click(findTestObject('Page_CuraHomepage/a_Make Appointment'))
 
-WebUI.setText(findTestObject('Page_CURA Healthcare Service/input_username'), 'John Doe')
+WebUI.setText(findTestObject('Page_Login/input_username'), 'John Doe')
 
-WebUI.setText(findTestObject('Page_CURA Healthcare Service/input_password'), 'ThisIsNotAPassword')
+WebUI.setText(findTestObject('Page_Login/input_password'), 'ThisIsNotAPassword')
 
-WebUI.click(findTestObject('Page_CURA Healthcare Service/button_Login'))
+WebUI.click(findTestObject('Page_Login/button_Login'))
 
-WebUI.selectOptionByValue(findTestObject('Page_CURA Healthcare Service/select_Tokyo CURA Healthcare C'), 'Hongkong CURA Healthcare Center', 
+WebUI.selectOptionByValue(findTestObject('Page_CuraAppointment/select_Tokyo CURA Healthcare C'), 'Hongkong CURA Healthcare Center', 
     true)
 
-WebUI.click(findTestObject('Page_CURA Healthcare Service/input_hospital_readmission'))
+WebUI.click(findTestObject('Page_CuraAppointment/input_hospital_readmission'))
 
-WebUI.click(findTestObject('Page_CURA Healthcare Service/input_programs'))
+WebUI.click(findTestObject('Page_CuraAppointment/input_programs'))
 
-WebUI.setText(findTestObject('Page_CURA Healthcare Service/input_visit_date'), '30/05/2018')
+WebUI.setText(findTestObject('Page_CuraAppointment/input_visit_date'), '30/05/2018')
 
-WebUI.setText(findTestObject('Page_CURA Healthcare Service/textarea_comment'), 'This is a comment')
+WebUI.setText(findTestObject('Page_CuraAppointment/textarea_comment'), 'This is a comment')
 
-WebUI.click(findTestObject('Page_CURA Healthcare Service/button_Book Appointment'))
+WebUI.click(findTestObject('Page_CuraAppointment/button_Book Appointment'))
 
-WebUI.click(findTestObject('Page_CURA Healthcare Service/p_Hongkong CURA Healthcare Cen'))
+WebUI.click(findTestObject('Page_AppointmentConfirmation/p_Hongkong CURA Healthcare Cen'))
 
-WebUI.click(findTestObject('Page_CURA Healthcare Service/p_Yes'))
+WebUI.click(findTestObject('Page_AppointmentConfirmation/p_Yes'))
 
-WebUI.click(findTestObject('Page_CURA Healthcare Service/p_Medicaid'))
+WebUI.click(findTestObject('Page_AppointmentConfirmation/p_Medicaid'))
 
-WebUI.click(findTestObject('Page_CURA Healthcare Service/p_30052018'))
+WebUI.click(findTestObject('Page_AppointmentConfirmation/p_30052018'))
 
-WebUI.click(findTestObject('Page_CURA Healthcare Service/p_This is a comment'))
+WebUI.click(findTestObject('Page_AppointmentConfirmation/p_This is a comment'))
 
-WebUI.click(findTestObject('Page_CURA Healthcare Service/a_Go to Homepage'))
+WebUI.click(findTestObject('Page_AppointmentConfirmation/a_Go to Homepage'))
 
 WebUI.closeBrowser()
 
