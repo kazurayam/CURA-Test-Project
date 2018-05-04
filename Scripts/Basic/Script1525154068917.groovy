@@ -45,15 +45,15 @@ WebUI.setText(findTestObject('Page_CuraAppointment/textarea_comment'), 'This is 
 
 WebUI.click(findTestObject('Page_CuraAppointment/button_Book Appointment'))
 
-WebUI.click(findTestObject('Page_AppointmentConfirmation/p_Hongkong CURA Healthcare Cen'))
+WebUI.click(findTestObject('Page_AppointmentConfirmation/p_facility'))
 
-WebUI.click(findTestObject('Page_AppointmentConfirmation/p_Yes'))
+WebUI.click(findTestObject('Page_AppointmentConfirmation/p_hospital_readmission'))
 
-WebUI.click(findTestObject('Page_AppointmentConfirmation/p_Medicaid'))
+WebUI.click(findTestObject('Page_AppointmentConfirmation/p_program'))
 
-WebUI.click(findTestObject('Page_AppointmentConfirmation/p_30052018'))
+WebUI.click(findTestObject('Page_AppointmentConfirmation/p_visit_date'))
 
-WebUI.click(findTestObject('Page_AppointmentConfirmation/p_This is a comment'))
+WebUI.click(findTestObject('Page_AppointmentConfirmation/p_comment'))
 
 WebUI.click(findTestObject('Page_AppointmentConfirmation/a_Go to Homepage'))
 

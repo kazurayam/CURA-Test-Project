@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>p_Medicaid</name>
+   <name>p_facility</name>
    <tag></tag>
-   <elementGuidId>3cb41051-df6c-4599-b070-b7587ad4a75c</elementGuidId>
+   <elementGuidId>a694acec-a8f9-49fa-b02c-5a6146482afe</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -18,20 +18,20 @@
       <matchCondition>equals</matchCondition>
       <name>id</name>
       <type>Main</type>
-      <value>program</value>
+      <value>facility</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>
-      <value>Medicaid</value>
+      <value>Hongkong CURA Healthcare Center</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;program&quot;)</value>
+      <value>id(&quot;facility&quot;)</value>
    </webElementProperties>
 </WebElementEntity>

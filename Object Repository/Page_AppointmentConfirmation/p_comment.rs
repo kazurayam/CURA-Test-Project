@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>p_This is a comment</name>
+   <name>p_comment</name>
    <tag></tag>
    <elementGuidId>6cae090e-4310-4211-8893-1df2b7578fcd</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>

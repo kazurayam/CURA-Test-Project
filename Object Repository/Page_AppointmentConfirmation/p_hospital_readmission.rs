@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>p_30052018</name>
+   <name>p_hospital_readmission</name>
    <tag></tag>
-   <elementGuidId>33daa34b-0ac2-465b-a321-5fe5923be764</elementGuidId>
+   <elementGuidId>197841f4-1606-4853-ae90-52a5cef8653a</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -18,20 +18,20 @@
       <matchCondition>equals</matchCondition>
       <name>id</name>
       <type>Main</type>
-      <value>visit_date</value>
+      <value>hospital_readmission</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>
-      <value>30/05/2018</value>
+      <value>Yes</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;visit_date&quot;)</value>
+      <value>id(&quot;hospital_readmission&quot;)</value>
    </webElementProperties>
 </WebElementEntity>
