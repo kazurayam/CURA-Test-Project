@@ -24,13 +24,28 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('http://demoaut.katalon.com/')
 
+// ホーム・ページが開く
+
+WebUI.verifyElementPresent(findTestObject('Page_CuraHomepage/a_Make Appointment'),
+	10, FailureHandling.STOP_ON_FAILURE)
+
 WebUI.click(findTestObject('Page_CuraHomepage/a_Make Appointment'))
+
+// ここでログイン・ページに遷移
+
+WebUI.verifyElementPresent(findTestObject('Page_Login/button_Login'),
+	10, FailureHandling.STOP_ON_FAILURE)
 
 WebUI.setText(findTestObject('Page_Login/input_username'), 'John Doe')
 
 WebUI.setText(findTestObject('Page_Login/input_password'), 'ThisIsNotAPassword')
 
 WebUI.click(findTestObject('Page_Login/button_Login'))
+
+// ここで入力ページに遷移
+
+WebUI.verifyElementPresent(findTestObject('Page_CuraAppointment/button_Book Appointment'),
+	10, FailureHandling.STOP_ON_FAILURE)
 
 WebUI.selectOptionByValue(findTestObject('Page_CuraAppointment/select_Tokyo CURA Healthcare C'), 'Hongkong CURA Healthcare Center', 
     true)
@@ -45,6 +60,11 @@ WebUI.setText(findTestObject('Page_CuraAppointment/textarea_comment'), 'This is 
 
 WebUI.click(findTestObject('Page_CuraAppointment/button_Book Appointment'))
 
+// ここで確認ページに遷移
+
+WebUI.verifyElementPresent(findTestObject('Page_AppointmentConfirmation/a_Go to Homepage'),
+	10, FailureHandling.STOP_ON_FAILURE)
+
 WebUI.click(findTestObject('Page_AppointmentConfirmation/p_facility'))
 
 WebUI.click(findTestObject('Page_AppointmentConfirmation/p_hospital_readmission'))
@@ -56,6 +76,11 @@ WebUI.click(findTestObject('Page_AppointmentConfirmation/p_visit_date'))
 WebUI.click(findTestObject('Page_AppointmentConfirmation/p_comment'))
 
 WebUI.click(findTestObject('Page_AppointmentConfirmation/a_Go to Homepage'))
+
+// ここでホーム・ページに遷移
+
+WebUI.verifyElementPresent(findTestObject('Page_CuraHomepage/a_Make Appointment'),
+	10, FailureHandling.STOP_ON_FAILURE)
 
 WebUI.closeBrowser()
 
