@@ -72,7 +72,7 @@ WebUI.verifyElementPresent(findTestObject('Page_AppointmentConfirmation/a_Go to 
 
 def facility = WebUI.getText(findTestObject('Page_AppointmentConfirmation/p_facility'))
 WebUI.verifyMatch(facility,
-	'(Tokyo|Hongkong|Seoul) CURA Healthcare Center', true)
+	'^(Tokyo|Hongkong|Seoul) CURA Healthcare Center$', true)
 
 def readmission = WebUI.getText(findTestObject('Page_AppointmentConfirmation/p_hospital_readmission'))
 WebUI.verifyMatch(readmission,
@@ -82,7 +82,6 @@ def program = WebUI.getText(findTestObject('Page_AppointmentConfirmation/p_progr
 WebUI.verifyMatch(program,
     '(Medicare|Medicaid|None)', true)
 
-//WebUI.click(findTestObject('Page_AppointmentConfirmation/p_visit_date'))
 def visitDateStr2 = WebUI.getText(findTestObject('Page_AppointmentConfirmation/p_visit_date'))
 WebUI.verifyMatch(visitDateStr2,
 	'[0-9]{2}/[0-9]{2}/[0-9]{4}',
@@ -98,7 +97,6 @@ WebUI.verifyEqual(isAfterNow, true, FailureHandling.CONTINUE_ON_FAILURE)
 def dayOfWeek = DateTimeFormatter.ofPattern('E').withLocale(Locale.US).format(parsed)
 WebUI.verifyNotEqual(dayOfWeek, 'Sun')
 
-//WebUI.click(findTestObject('Page_AppointmentConfirmation/p_comment'))
 def comment = WebUI.getText(findTestObject('Page_AppointmentConfirmation/p_comment'))
 if (comment != null) {
 	WebUI.verifyLessThan(comment.length(), 400)

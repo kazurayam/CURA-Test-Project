@@ -1,5 +1,5 @@
-CURA Test Project
+CURA-Test-Project
 ==================
 
-[Qiita](https://qiita.com/)に投稿した記事[「Katalon StudioでRecordしてみた」](https://qiita.com/kazurayam/items/433876c0b3bc7f33f019)のサンプルコード。
+[Qiita](https://qiita.com/)に投稿した記事[「Katalon Studioでテストを自作した」](https://qiita.com/kazurayam/items/bdf71ed70fdc32bb1758)のサンプルコード
 
