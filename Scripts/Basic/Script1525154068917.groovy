@@ -54,7 +54,12 @@ WebUI.click(findTestObject('Page_CuraAppointment/input_hospital_readmission'))
 
 WebUI.click(findTestObject('Page_CuraAppointment/input_programs'))
 
-WebUI.setText(findTestObject('Page_CuraAppointment/input_visit_date'), '30/05/2018')
+// 今日を起点に来週の同じ曜日を指定
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+def visitDate = LocalDateTime.now().plusWeeks(1)
+def visitDateStr = DateTimeFormatter.ofPattern("dd/MM/yyyy").format(visitDate)
+WebUI.setText(findTestObject('Page_CuraAppointment/input_visit_date'), visitDateStr)
 
 WebUI.setText(findTestObject('Page_CuraAppointment/textarea_comment'), 'This is a comment')
 
@@ -65,15 +70,39 @@ WebUI.click(findTestObject('Page_CuraAppointment/button_Book Appointment'))
 WebUI.verifyElementPresent(findTestObject('Page_AppointmentConfirmation/a_Go to Homepage'),
 	10, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('Page_AppointmentConfirmation/p_facility'))
+def facility = WebUI.getText(findTestObject('Page_AppointmentConfirmation/p_facility'))
+WebUI.verifyMatch(facility,
+	'(Tokyo|Hongkong|Seoul) CURA Healthcare Center', true)
 
-WebUI.click(findTestObject('Page_AppointmentConfirmation/p_hospital_readmission'))
+def readmission = WebUI.getText(findTestObject('Page_AppointmentConfirmation/p_hospital_readmission'))
+WebUI.verifyMatch(readmission,
+	'(Yes|No)', true)
 
-WebUI.click(findTestObject('Page_AppointmentConfirmation/p_program'))
+def program = WebUI.getText(findTestObject('Page_AppointmentConfirmation/p_program'))
+WebUI.verifyMatch(program,
+    '(Medicare|Medicaid|None)', true)
 
-WebUI.click(findTestObject('Page_AppointmentConfirmation/p_visit_date'))
+//WebUI.click(findTestObject('Page_AppointmentConfirmation/p_visit_date'))
+def visitDateStr2 = WebUI.getText(findTestObject('Page_AppointmentConfirmation/p_visit_date'))
+WebUI.verifyMatch(visitDateStr2,
+	'[0-9]{2}/[0-9]{2}/[0-9]{4}',
+	true, FailureHandling.CONTINUE_ON_FAILURE)
+import java.time.temporal.TemporalAccessor
+TemporalAccessor parsed = DateTimeFormatter.ofPattern('dd/MM/uuuu').parse(visitDateStr2)
+import java.time.LocalDate
+LocalDateTime visitDate2 = LocalDate.from(parsed).atStartOfDay()
+// 今日よりも未来の日付であること
+boolean isAfterNow = visitDate2.isAfter(LocalDateTime.now())
+WebUI.verifyEqual(isAfterNow, true, FailureHandling.CONTINUE_ON_FAILURE)
+// 日曜日ではないこと
+def dayOfWeek = DateTimeFormatter.ofPattern('E').withLocale(Locale.US).format(parsed)
+WebUI.verifyNotEqual(dayOfWeek, 'Sun')
 
-WebUI.click(findTestObject('Page_AppointmentConfirmation/p_comment'))
+//WebUI.click(findTestObject('Page_AppointmentConfirmation/p_comment'))
+def comment = WebUI.getText(findTestObject('Page_AppointmentConfirmation/p_comment'))
+if (comment != null) {
+	WebUI.verifyLessThan(comment.length(), 400)
+}
 
 WebUI.click(findTestObject('Page_AppointmentConfirmation/a_Go to Homepage'))
 
