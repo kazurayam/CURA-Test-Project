@@ -95,7 +95,8 @@ boolean isAfterNow = visitDate2.isAfter(LocalDateTime.now())
 WebUI.verifyEqual(isAfterNow, true, FailureHandling.CONTINUE_ON_FAILURE)
 // 日曜日ではないこと
 def dayOfWeek = DateTimeFormatter.ofPattern('E').withLocale(Locale.US).format(parsed)
-WebUI.verifyNotEqual(dayOfWeek, 'Sun')
+//WebUI.verifyNotEqual(dayOfWeek, 'Sun')      //本当はこっち
+WebUI.verifyEqual(dayOfWeek, 'Sun')           //わざと失敗させてみた
 
 def comment = WebUI.getText(findTestObject('Page_AppointmentConfirmation/p_comment'))
 if (comment != null) {
@@ -110,4 +111,6 @@ WebUI.verifyElementPresent(findTestObject('Page_CuraHomepage/a_Make Appointment'
 	10, FailureHandling.STOP_ON_FAILURE)
 
 WebUI.closeBrowser()
-
+/*
+ * コメント
+ */
