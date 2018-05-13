@@ -25,28 +25,21 @@ WebUI.openBrowser('')
 WebUI.navigateToUrl('http://demoaut.katalon.com/')
 
 // ホーム・ページが開く
-
 WebUI.verifyElementPresent(findTestObject('Page_CuraHomepage/a_Make Appointment'),
 	10, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('Page_CuraHomepage/a_Make Appointment'))
 
-// ここでログイン・ページに遷移
+// Make AppointmentボタンをクリックしてLogin画面を呼び出しUsernameとPasswordを入力しログインするまでを
+// 別のTest Caseで実行する
+WebUI.callTestCase(findTestCase('Common/Login'),
+	[
+		'Username': 'John Doe',
+		'Password': 'ThisIsNotAPassword'
+	],
+	FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementPresent(findTestObject('Page_Login/button_Login'),
-	10, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.setText(findTestObject('Page_Login/input_username'), 'John Doe')
-
-WebUI.setText(findTestObject('Page_Login/input_password'), 'ThisIsNotAPassword')
-
-WebUI.click(findTestObject('Page_Login/button_Login'))
-
-// ここで入力ページに遷移
-
-WebUI.verifyElementPresent(findTestObject('Page_CuraAppointment/button_Book Appointment'),
-	10, FailureHandling.STOP_ON_FAILURE)
-
+// 診察の予約を入力する
 WebUI.selectOptionByValue(findTestObject('Page_CuraAppointment/select_Tokyo CURA Healthcare C'), 'Hongkong CURA Healthcare Center', 
     true)
 
