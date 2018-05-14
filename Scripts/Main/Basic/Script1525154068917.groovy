@@ -22,7 +22,7 @@ import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('http://demoaut.katalon.com/')
+WebUI.navigateToUrl("http://${GlobalVariable.Hostname}/")
 
 // ホーム・ページが開く
 WebUI.verifyElementPresent(findTestObject('Page_CuraHomepage/a_Make Appointment'),
