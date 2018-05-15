@@ -14,4 +14,9 @@
       <initValue>'ThisIsNotAPassword'</initValue>
       <name>Password</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'demoaut.katalon.com'</initValue>
+      <name>Hostname</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
