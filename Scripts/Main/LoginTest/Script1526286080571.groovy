@@ -20,7 +20,7 @@ WebUI.verifyElementPresent(findTestObject('Page_CuraHomepage/a_Make Appointment'
 // Make AppointmentボタンをクリックしてLogin画面を呼び出しUsernameとPasswordを入力しログインするまでを
 // 別のTest Caseで実行する
 
-stopWatch = new StopWatch()
+def stopWatch = new StopWatch()
 stopWatch.start()
 WebUI.callTestCase(findTestCase('Common/Login'),
 	[

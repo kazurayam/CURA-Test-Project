@@ -13,7 +13,7 @@ Libs/
 
 ## I do not want Report to be published
 Reports/
-/bin/
+bin/
 
 
 ## If you want to hide your confidential information,
